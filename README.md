@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 # python-ai-personalized-messages
 
-Personalized messages generated from CSV using Python.
+Python project for generating personalized text messages from CSV data.
 
->>>>>>> 41879d8 (Initial project structure)
+>>>>>>> d919d62 (Prepare project before syncing with GitHub)
