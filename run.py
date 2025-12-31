@@ -1,25 +1,17 @@
-INPUT_FILE = "data/people.csv"
+import os
+from src.load_data import load_people
+from src.generate_text import generate_personalized_message
 
-from src.load_data import load_data
-from src.analyze import analyze
-from src.generate_text import generate_text
-
-
-if __name__ == '__main__':
- df = load_data('data/sample.csv')
-summary = analyze(df)
-report = generate_text(summary)
+os.makedirs("outputs", exist_ok=True)
 
 
-with open('outputs/report.txt', 'w', encoding='utf-8') as f:
- f.write(report)
+people = load_people("data/sample.csv")
 
-
-print('Звіт згенеровано → outputs/report.txt')
-
-print("Report generation finished successfully.")
-
-
-for each person:
-    generate short personalized message
-    save to outputs/
+with open("outputs/messages.txt", "w", encoding="utf-8") as f:
+    for person in people:
+        message = generate_personalized_message(
+            person["name"],
+            person["age"],
+            person["city"]
+        )
+        f.write(message + "\n\n")
