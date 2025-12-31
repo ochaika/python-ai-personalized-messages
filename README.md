@@ -1,82 +1,96 @@
-# Python AI Personalized Messages
+# Python AI Personalized Messages Generator
 
-This project demonstrates how to generate personalized text messages from CSV data using Python.
-It is designed as a portfolio-ready example with a clean structure and AI-ready architecture.
+This project is a Python tool for generating personalized text messages based on CSV data.
+It is designed to automate the creation of individual messages for multiple recipients using structured input data.
 
-## 🚀 Features
+The project can be used for:
+- personalized emails
+- marketing messages
+- notifications
+- customer communication
+- HR or internal messaging
 
-- Load structured data from CSV files
-- Analyze and process user information
-- Generate personalized messages
-- AI-ready design with environment variables (`.env`)
-- Safe fallback logic when no AI API key is provided
-- Clear project structure suitable for real-world applications
+---
 
-## 📂 Project Structure
+## Project Structure
 
 python-ai-personalized-messages/
 │
 ├── data/
-│ ├── people.csv
-│ └── sample.csv
+│ └── sample.csv # Example input CSV file
 │
 ├── src/
-│ ├── load_data.py
-│ ├── analyze.py
-│ ├── generate_text.py
-│ └── prompts.py
+│ ├── load_data.py # CSV loading logic
+│ └── generate_messages.py # Message generation logic
 │
-├── outputs/
-│ └── messages.txt
+├── outputs/ # Generated messages (created automatically)
 │
-├── run.py
-├── requirements.txt
-├── .env.example
+├── run.py # Project entry point
+├── requirements.txt # Python dependencies
+├── README.md
 ├── .gitignore
-└── README.md
+└── .env.example
 
 
-## ▶️ How to Run
+---
 
-1. Clone the repository:
-```bash
-git clone https://github.com/ochaika/python-ai-personalized-messages.git
-cd python-ai-personalized-messages
+## Input Data Format
 
-1.(Optional) Create and activate a virtual environment
+The input CSV file must contain structured data.
+Example (`data/sample.csv`):
 
-2.Install dependencies:
+```csv
+name,age,city
+John,30,London
+Anna,25,Berlin
+
+How to Run
+
+Install dependencies:
+
 pip install -r requirements.txt
 
-3.pip install -r requirements.txt
 
-4.Run the project:
+Run the script:
+
 python run.py
 
-5.Check the generated output:
-outputs/messages.txt
 
-AI Integration
+Generated messages will be saved to the outputs/ directory.
 
-The project is prepared for AI integration using an environment variable:
-AI_API_KEY=your_api_key_here
+Customization
 
-If no API key is provided, the project automatically uses a fallback text generation logic.
-This allows the project to run safely without external services.
+The project can be easily adapted to:
+
+different CSV structures
+
+custom message templates
+
+integration with email services or APIs
+
+multilingual message generation
+
+Use Cases
+
+Marketing campaigns
+
+Personalized email generation
+
+Automated notifications
+
+CRM data processing
+
+AI-assisted text generation
 
 Notes
 
-API keys are not stored in the repository
+The outputs/ directory is created automatically during execution.
 
-.env.example is provided for configuration reference
+Only sample data is included in the repository.
 
-The project is suitable for extension with real AI APIs in the future
+Real customer data should never be committed to version control.
 
-This project was created as a learning and portfolio example.
+License
 
-
-
-
-
-
+This project is provided for educational and portfolio purposes.
 
